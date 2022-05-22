@@ -4,7 +4,6 @@ import ReactPaginate from 'react-paginate';
 import { connect } from 'react-redux';
 import { getRepositoriesThunk } from '../../../state/userReduser';
 import style from './Pagination.module.css';
-import ArrowIcon from '../../../images/ArrowIcon';
 
 
 
@@ -30,7 +29,7 @@ function Pagination({ reposCount, userName, getRepositoriesThunk }) {
 
 	return (
 		<div className={style.wraper}>
-			<span> {itemOffset}-{endOffset} of {reposCount} items </span>
+			<span> {itemOffset || 1}-{endOffset} of {reposCount} items </span>
 			<ReactPaginate
 				breakLabel="..."
 				nextLabel="❯"

@@ -7,8 +7,6 @@ const IS_USER_EMPTY = 'IS_USER_EMPTY';
 const IS_FETCING = 'IS_FETCING';
 
 
-// подправь начальные булевые!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 const initialState = {
 	user: '',
 	repos: [],
@@ -83,10 +81,7 @@ export const getRepositoriesThunk = (userName, reposCount, carentPage) => async 
 	const response = await profileApi.getRepos(userName, reposCount, carentPage);
 	dispatch(setRepositories(response));
 	dispatch(cnangeIsFetching(false));
-
-
 }
-
 
 export default userReduser;
 

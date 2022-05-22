@@ -13,7 +13,11 @@ function Main({ isStartPage, isUserEmpty, isFetching, reposCount }) {
 		<div className={style.main}>
 			{isStartPage ?
 				<>
-					{isFetching ? <Loader /> : <Empty text='Start with searching a GitHub user' icon={searchIcon} />}
+					{isFetching ?
+						<Loader />
+						:
+						<Empty text='Start with searching a GitHub user' icon={searchIcon} />
+					}
 				</>
 				:
 				<>
@@ -22,7 +26,7 @@ function Main({ isStartPage, isUserEmpty, isFetching, reposCount }) {
 						:
 						<>
 							<Profile />
-							{reposCount ? <Pagination />:null}
+							{reposCount ? <Pagination /> : null}
 						</>
 					}
 				</>

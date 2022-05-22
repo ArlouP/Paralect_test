@@ -5,13 +5,11 @@ import xmarkIcon from '../../../images/xmarkIcon.svg'
 import { connect } from "react-redux";
 import Loader from "../../loader/Loader";
 import style from './Profile.module.css';
-// import Pagination from "./pagination/Pagination";
 
-
-
-
-function Profile({ userLink, reposCount, repos, userPic, userName, userNick, followersCount, followingCount, isFetching }) {
-
+function Profile({ userLink, reposCount, repos,
+	userPic, userName, userNick,
+	followersCount, followingCount, isFetching
+}) {
 	return (
 		<>
 
@@ -31,7 +29,6 @@ function Profile({ userLink, reposCount, repos, userPic, userName, userNick, fol
 						{reposCount ?
 							<>
 								<Repos repos={repos} reposCount={reposCount} />
-								{/* {<Pagination/>} */}
 							</>
 							:
 							<Empty text='Repository list is empty' icon={xmarkIcon} />
